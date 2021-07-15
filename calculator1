@@ -1,0 +1,56 @@
+def function_input ():
+    while True:
+        try: number = float(input('Enter number:'))
+        except ValueError:
+            print("You must write a number.")
+            continue
+        return number
+
+def function_operation():
+    if operation == '+':
+        print('{} + {} = '.format(number_1, number_2))
+        print('number_1 + number_2')
+    elif operation == '-':
+        print("{} - {} = ".format(number_1, number_2))
+        print(number_1 - number_2)
+    elif operation == "*":
+        print("{} * {} = ".format(number_1, number_2))
+        print(number_1 * number_2)
+    elif operation == "/":
+        try:
+            print("{} / {} = ".format(number_1, number_2))
+            print(number_1 / number_2)
+        except ZeroDivisionError:
+            print("Divide by zero is not possible, please try again")
+            return operation
+    elif operation == '**':
+        print('{} ** {} ='.format(number_1, number_2))
+        print(number_1 ** number_2)
+    else:
+        print("There is no such operation, please try again.")
+
+
+while True:
+    print('Welcome to calculator!')
+
+    ask = input('''Do you want to start?
+        Write "Y" for yes or "N" for not''')
+    if ask == 'Y':
+        print()
+    elif ask == 'N':
+        print("See you later!")
+        break
+
+    operation = input('''What operation you want to use? '
+        Write:
+        + for add;
+        - for subtraction;
+        * for multiplication;
+        / for division;
+        ** for ''')
+
+
+    number_1 = function_input()
+    number_2 = function_input()
+
+    operation_ = function_operation()
